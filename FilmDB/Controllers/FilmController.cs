@@ -59,5 +59,13 @@ namespace FilmDB.Controllers
             _manager.UpdateFilm(film);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var filmToDisplay = _manager.GetFilm(id);
+            return View(filmToDisplay);
+        }
+
     }
 }
